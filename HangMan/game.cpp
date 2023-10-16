@@ -53,6 +53,10 @@ void game::ask_next_letter()
 }
 bool game::letterfound(char* letters, char letter)
 {
+	if (status == 1)
+	{
+		return true;
+	}
 	for (int i = 0; letters[i] != '\0'; i++) {
 		if (letters[i] == letter) {
 			return true;
