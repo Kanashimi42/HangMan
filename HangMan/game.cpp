@@ -48,15 +48,6 @@ void game::askNext()
 	} while (letter == ' ');
 	Update(letter, right_letters, bad_letters);
 
-	if (getStatus() == -1)
-	{
-		cout << "You lost!" << endl;
-		cout << "The hidden word was: " << getLetters() << endl;
-	}
-	else if (getStatus() == 1)
-	{
-		cout << "You won! Congrats!" << endl;
-	}
 }
 bool game::letterfound(const char* rbletters, char letter)
 {

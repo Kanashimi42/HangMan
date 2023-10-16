@@ -9,10 +9,6 @@
 using namespace std;
 int main(int argc, char* argv[]) {
 	clock_t start = clock();
-	if (argc < 2) {
-		cout << "Check words.txt!" << endl;
-		return 1;
-	}
 
 	vector<string> words;
 	ifstream inputFile("words.txt");
