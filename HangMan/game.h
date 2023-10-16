@@ -5,14 +5,14 @@ using namespace std;
 class game
 {
 public:
+	game(const string& word);
 	void initialize(string word);
 	void get_letters(string word, char* letters);
 	void ask_next_letter();
 	bool letterfound(char* letters, char letter);
 	void step(char letter, char* right_letters, char* bad_letters, char* letters);
 
-	int getStatus() const;
-
+	int getStatus();
 
 	int getErrors() const;
 
@@ -32,6 +32,6 @@ private:
 	int errors;
 	char* right_letters;
 	char bad_letters[7];
-	bool status;
+	int status;
 };
 

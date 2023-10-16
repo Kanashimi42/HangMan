@@ -1,12 +1,19 @@
 #include "game.h"
+
+
+game::game(const string& word)
+{
+	game::initialize(word);
+}
 void game::initialize(string word)
 {
-	rint = word.length();
+	rint = word.length() - 1;
 	letters = new char[rint + 1];
 	get_letters(word, letters);
 	right_letters = new char[rint];
 	errors = 0;
 	status = 0;
+	rcount = 0;
 }
 void game::get_letters(string word, char* letters)
 {
@@ -33,6 +40,16 @@ void game::ask_next_letter()
 		cin >> letter;
 	} while (letter == ' ');
 	step(letter, right_letters, bad_letters, letters);
+
+	if (getStatus() == -1)
+	{
+		cout << "You lost!" << endl;
+		cout << "The hidden word was: " << getLetters() << endl;
+	}
+	else if (getStatus() == 1)
+	{
+		cout << "You won! Congrats!" << endl;
+	}
 }
 bool game::letterfound(char* letters, char letter)
 {
@@ -57,7 +74,7 @@ void game::step(char letter, char* right_letters, char* bad_letters, char* lette
 	{
 		right_letters[rcount] = letter;
 		rcount++;
-		if (strcmp(right_letters, letters) == 0)
+		if (rcount == rint)
 		{
 			status = 1;
 		}
@@ -65,13 +82,20 @@ void game::step(char letter, char* right_letters, char* bad_letters, char* lette
 	else {
 		bad_letters[counter] = letter;
 		counter++;
+		errors++;
+		if (errors >= 7)
+		{
+			status = -1;
+		}
 	}
 }
 
 
-int game::getStatus() const {
+
+int game::getStatus() {
 	return status;
 }
+
 
 int game::getErrors() const {
 	return errors;

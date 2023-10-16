@@ -7,16 +7,7 @@ using namespace std;
 class resultprint
 {
 public:
-	void print_status(const game& gameInstance);
-	void cls();
+	void print_status(game& gameInstance);
 	string get_word_for_print(const char*, const char*);
-
-
-
-private:
-
-
-
-}
-
+};
 
