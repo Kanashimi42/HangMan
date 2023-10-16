@@ -35,8 +35,7 @@ int main(int argc, char* argv[]) {
 
 	game game(word);
 	resultprint printer;
-
-	while (game.getStatus() == 0) {
+	while (game.getIsrunning()) {
 		printer.print_status(game);
 		game.askNext();
 	}

@@ -37,6 +37,11 @@ void game::get_Letters(string word, char* letters)
 }
 void game::askNext()
 {
+	if (status == 1 || status == -1)
+	{
+		isRunning = false;
+		return;
+	}
 	do {
 		cout << "Enter next letter: " << endl;
 		cin >> letter;
@@ -119,7 +124,10 @@ void game::Update(char letter, char* right_letters, char* bad_letters)
 }
 
 
-
+bool game::getIsrunning()
+{
+	return isRunning;
+}
 int game::getStatus() {
 	return status;
 }

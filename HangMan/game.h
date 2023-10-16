@@ -12,7 +12,7 @@ public:
 	bool letterfound(const char* letters, char letter);
 	bool letterfoundcheck(char letter);
 	void Update(char letter, char* right_letters, char* bad_letters);
-
+	bool getIsrunning();
 	int getStatus();
 
 	int getErrors() const;
@@ -24,6 +24,7 @@ public:
 	const char* getBadLetters() const;
 
 private:
+	bool isRunning = true;
 	char* split_word;
 	int rint = 0;
 	int rcount = 0;
