@@ -5,7 +5,7 @@ void resultprint::print_status(game& gameInstance)
 {
 	system("cls");
 	print_hang(gameInstance.getErrors());
-	cout << "Word: " << get_word_for_print(gameInstance.getLetters(), gameInstance.getRightLetters()) << endl;
+	cout << "Word: " << WordToPrint(gameInstance.getLetters(), gameInstance.getRightLetters()) << endl;
 	cout << "Errors: ";
 	for (int i = 0; i < 7; i++)
 	{
@@ -29,7 +29,7 @@ void resultprint::print_status(game& gameInstance)
 	}
 };
 
-string resultprint::get_word_for_print(const char* letters, const char* right_letters) {
+string resultprint::WordToPrint(const char* letters, const char* right_letters) {
 	string result = "";
 
 	for (const char* item = letters; *item; item++) {
@@ -49,7 +49,7 @@ string resultprint::get_word_for_print(const char* letters, const char* right_le
 void resultprint::print_hang(int errors) {
 	switch (errors) {
 	case 0:
-		std::cout << R"(
+		cout << R"(
           _______
           |/
           |
@@ -61,11 +61,11 @@ void resultprint::print_hang(int errors) {
           |
         __|________
         |         |
-        )" << std::endl;
+        )" << endl;
 		break;
 
 	case 1:
-		std::cout << R"(
+		cout << R"(
           _______
           |/
           |     ( )
@@ -77,11 +77,11 @@ void resultprint::print_hang(int errors) {
           |
         __|________
         |         |
-        )" << std::endl;
+        )" << endl;
 		break;
 
 	case 2:
-		std::cout << R"(
+		cout << R"(
           _______
           |/
           |     ( )
@@ -93,11 +93,11 @@ void resultprint::print_hang(int errors) {
           |
         __|________
         |         |
-        )" << std::endl;
+        )" << endl;
 		break;
 
 	case 3:
-		std::cout << R"(
+		cout << R"(
           _______
           |/
           |     ( )
@@ -109,11 +109,11 @@ void resultprint::print_hang(int errors) {
           |
         __|________
         |         |
-        )" << std::endl;
+        )" << endl;
 		break;
 
 	case 4:
-		std::cout << R"(
+		cout << R"(
           _______
           |/
           |     ( )
@@ -125,11 +125,11 @@ void resultprint::print_hang(int errors) {
           |
         __|________
         |         |
-        )" << std::endl;
+        )" << endl;
 		break;
 
 	case 5:
-		std::cout << R"(
+		cout << R"(
           _______
           |/
           |     ( )
@@ -141,11 +141,11 @@ void resultprint::print_hang(int errors) {
           |
         __|________
         |         |
-        )" << std::endl;
+        )" << endl;
 		break;
 
 	case 6:
-		std::cout << R"(
+		cout << R"(
           _______
           |/
           |     ( )
@@ -157,11 +157,11 @@ void resultprint::print_hang(int errors) {
           |
         __|________
         |         |
-        )" << std::endl;
+        )" << endl;
 		break;
 
 	case 7:
-		std::cout << R"(
+		cout << R"(
           _______
           |/     |
           |     (_)
@@ -173,7 +173,7 @@ void resultprint::print_hang(int errors) {
           |
         __|________
         |         |
-        )" << std::endl;
+        )" << endl;
 		break;
 	}
 }

@@ -38,12 +38,12 @@ int main(int argc, char* argv[]) {
 
 	while (game.getStatus() == 0) {
 		printer.print_status(game);
-		game.ask_next_letter();
+		game.askNext();
 	}
 	clock_t end = clock();
 	double seconds = (double)(end - start) / CLOCKS_PER_SEC;
 	cout << "You completed the word in: " << seconds << " seconds!";
-	
-	
+
+
 	return 0;
 }

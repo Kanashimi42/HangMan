@@ -7,10 +7,11 @@ class game
 public:
 	game(const string& word);
 	void initialize(string word);
-	void get_letters(string word, char* letters);
-	void ask_next_letter();
-	bool letterfound(char* letters, char letter);
-	void step(char letter, char* right_letters, char* bad_letters, char* letters);
+	void get_Letters(string word, char* letters);
+	void askNext();
+	bool letterfound(const char* letters, char letter);
+	bool letterfoundcheck(char letter);
+	void Update(char letter, char* right_letters, char* bad_letters);
 
 	int getStatus();
 
