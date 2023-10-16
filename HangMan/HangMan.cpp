@@ -10,11 +10,10 @@ using namespace std;
 int main(int argc, char* argv[]) {
 	clock_t start = clock();
 	if (argc < 2) {
-		cout << "Usage: program_name word" << endl;
+		cout << "Check words.txt!" << endl;
 		return 1;
 	}
 
-	// Загрузка слов из файла
 	vector<string> words;
 	ifstream inputFile("words.txt");
 

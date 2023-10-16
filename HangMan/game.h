@@ -34,4 +34,3 @@ private:
 	char bad_letters[7];
 	int status;
 };
-
