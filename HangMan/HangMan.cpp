@@ -3,7 +3,6 @@
 #include <vector>
 #include <string>
 #include <ctime>
-#include <cstdlib>
 #include "game.h"
 #include "resultprint.h"
 using namespace std;
